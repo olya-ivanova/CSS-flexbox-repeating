@@ -1,0 +1,49 @@
+.flexbox-container {
+  /* height: 700px; */
+  display: flex;
+
+  /* flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+
+  /* flex-wrap: wrap; */
+
+  /* justify-content: center; */
+  /* align-items: center; ---> align-items: stretch; by default */
+
+  /*align-content: center;  ---> for multiline flexbox containers (flex-start, flex-end, center, ...) + height requires */
+  /* use justify-content + align-items instead  align-content */
+}
+
+.flexbox-item {
+  width: 200px;
+  margin: 10px;
+  border: 3px solid #333333;
+  background-color: #dfdfdf;
+}
+
+.flexbox-item-1 {
+  /* flex: 1 0 0 --->  grow, shrink, basis*/
+  min-height: 100px;
+  flex-shrink: 0;
+  align-self: flex-end;
+  order: 2;
+}
+
+.flexbox-item-2 {
+  min-height: 200px;
+  flex-grow: 2; /* all is does --- > takes leftover space*/
+  flex-basis: 0; /* now flexbox-item-2 exactly 2 times more than flexbox-item-3. without it flex-grow: 2 will get available remaining space*/
+  align-self: center; /* overrides cross-axis alignment of a property */
+  order: 3;
+}
+
+.flexbox-item-3 {
+  min-height: 300px;
+  flex-grow: 1;
+  flex-basis: 0; /* it overrides width and decide where to start growing from*/
+  align-self: flex-start;
+  order: 1;
+}
+
+/* flex-grow takes leftover space and divides it among flexbox-item-n depending on their number*/
